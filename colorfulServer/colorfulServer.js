@@ -9,7 +9,7 @@ const server = http.createServer( (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World');
 
-    process.kill(pid, 'SIGTERM');
+    process.kill(process.pid, 'SIGTERM');
 
 });
 
@@ -19,6 +19,6 @@ server.listen(port, hostname, () => {
 
 process.on('SIGTERM', () => {
     server.close(() => {
-        console.log('Process terminated');
+        console.log(chalk.red('Process terminated'));
     })
 });
