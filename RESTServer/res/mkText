@@ -1,0 +1,10 @@
+#!/bin/bash
+#Just makes a whole lotta text
+#To use: 
+#chmod 777 ./mkText
+#./mkText
+
+for i in {1..2000000}
+do
+ echo -n ">>><$i><<<" >> text.txt
+done
